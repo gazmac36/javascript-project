@@ -1,0 +1,435 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h6, h6, p {
+    color: rgb(56, 56, 56); 
+}
+
+html, body{
+    margin: 0;
+    width: 100%;
+    font-family: Helvetica;
+}
+body {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 3em;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 220px auto;
+    grid-template-rows: 140px auto;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "m c c c c c c c c c c c";
+}
+
+nav {
+    grid-area: m;
+}
+
+#render-view {
+    grid-area: c;
+
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    grid-area: h;
+    /* background-color: #5477A0; */
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.14);
+    z-index: 1;
+}
+
+.logo-wrapper h2 {
+    display: inline-block;
+    padding-left: 40px;
+    /* color: white; */
+    color: rgb(56, 56, 56);
+    letter-spacing: 3px;
+    font-size: 60px;
+}
+
+.logo-wrapper img { 
+    margin-left: 25px;
+    padding-top: 8px; 
+    width: 100px;
+}
+
+/* h1 {
+   
+} */
+
+.scrollmenu {
+    /* background-color: #5477A0; */
+    background-color: white;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0px 6px 6px 3px rgba(0,0,0,0.14);
+}
+
+.scrollmenu li {
+    font-size: 30px;
+    display: block;
+    /* color: white; */
+    color:rgb(56, 56, 56);
+    text-align: left;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+.scrollmenu li:hover{
+    /* background-color: white;
+    color: black; */
+    background-color: rgb(56, 56, 56);
+    color: white;
+}
+
+#add-journey-form {
+    border: 1px solid lightgray;
+    padding: 100px 150px;
+    border-radius: 25px;
+    box-shadow: 0px 6px 6px 3px rgba(0,0,0,0.14);
+}
+
+#add-journey-form input, select {
+    display: block;
+    margin: 10px auto;
+}
+
+#add-journey-form input[type="radio"]{
+    display: inline;
+    margin: 0 5px;
+}
+
+#render-view {
+    overflow: auto;
+    padding: 30px; 
+}
+
+#render-view ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#render-view .cards {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#render-view .card {
+    
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 auto;
+    background-color: white;
+    color: dimgray;
+    padding: 20px;
+    text-justify: newspaper;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 20px;
+    width: 225px;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    font-family: 'Signika Negative', sans-serif;
+    box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.14);
+}
+
+#render-view hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#render-view .distanceLabel {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#render-view .distance {
+    font-size: 75px;
+    width: 50%;
+}
+
+#render-view .distanceResult {
+    font-size: 75;
+    word-spacing: -15px;
+}
+
+#render-view .vehicleLabel {
+    margin-top: 10px;
+    word-spacing: 50px;
+}
+
+#render-view .fuelLabel {
+    margin-top: 30px;
+    word-spacing: 50px;
+}
+
+#render-view .fuelLine {
+    margin-bottom: 30px;
+}
+
+#render-view #map {
+    margin: 50px auto;
+    display: block;
+    width: 1600px; 
+    height: 700px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.14);
+}
+
+#render-view #mapHeader {
+    text-align: center;
+}
+
+
+#render-view #all_charts_container {
+    overflow: auto;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    grid-gap: 50px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+       
+        "ch ch ch ch ch ch"
+        "fp fp oc oc vt vt"
+        "ec ec ec rd rd rd"
+        "pc pc pc pc pc pc"
+        "pd pd pd pd pd pd"
+        "rs rs rs rs rs rs"
+        " . . . . . .";
+  
+      
+}
+
+#render-view #chart_view_header_element {
+    grid-area: ch;
+}
+
+#render-view #render_summary_container{
+    grid-area: rs;
+
+    
+}
+
+#render-view #render_emissions_chart{
+    grid-area: ec;
+    height: 500px;
+    width: 800px;
+    
+}
+
+#render-view #render_distance_chart {
+    grid-area: rd;
+    height: 500px;
+    width: 800px;
+}
+#render-view #render_projections_chart {
+    grid-area: pc;
+    height: 500px;
+    width: 1500px;
+}
+
+#render-view #render_projections_distance {
+    grid-area: pd;
+    height: 500px;
+    width: 1500px;
+}
+
+#render-view #render_fuel_pie_chart {
+    grid-area: fp;
+
+}
+
+#render-view #render_vehicle_type_chart {
+    grid-area: vt;
+    
+}
+
+#render-view #render_optional_chart {
+    grid-area: oc;    
+}
+
+#journeys-all-view {
+    /* text-align: justify; */
+    overflow: auto;
+
+}
+
+#journeys-form-view{
+    display: grid;
+    justify-items: center;
+}
+
+#add-journey-form {
+    width: 375px;
+    margin: 20px 0;
+    font-size: 25px; 
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas:
+        "vtl vtl vsd vsd"
+        "ftl ftl fsd fsd"
+        "dl dl di di"
+        ". . . ."
+        "up up up up"
+        "kl uk ml um"
+        "op op op op"
+        "yl oy nl on"
+        "sb sb sb sb"
+        "sb sb sb sb";
+}
+
+#add-journey-form p {
+    margin: 5px 0;
+}
+
+#add-journey-form #vehicle_type_label {
+    grid-area: vtl;
+    justify-self: end;
+}
+
+#add-journey-form #vehicle_select_dropdown {
+    grid-area: vsd;
+}
+
+#add-journey-form #fuel_type_label {
+    grid-area: ftl;
+    justify-self: end;
+}
+
+#add-journey-form #fuel_select_dropdown {
+    grid-area: fsd;
+}
+
+#add-journey-form #distance_label {
+    grid-area: dl;
+    justify-self: end;
+}
+
+#add-journey-form #distance_input {
+    grid-area: di;
+    padding: 5px;
+    font-size: 20px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+#add-journey-form #unit_paragraph {
+    grid-area: up;
+    justify-self: center;
+
+}
+
+#add-journey-form #km_label {
+    grid-area: kl;
+    justify-self: end;
+    margin-right: 20px;
+}
+
+#add-journey-form #unit-km {
+    grid-area: uk;
+
+}
+
+#add-journey-form #miles_label{
+    grid-area: ml;
+    justify-self: end;
+    margin-right: 20px; 
+}
+
+#add-journey-form #unit-miles {
+    grid-area: um;
+}
+
+#add-journey-form #optional_paragraph {
+    grid-area: op;
+    justify-self: center;
+}
+
+#add-journey-form #yes_label {
+    grid-area: yl;
+    justify-self: end;
+    margin-right: 20px;
+}
+
+#add-journey-form #optional-yes{
+    grid-area: oy;
+}
+
+#add-journey-form #no_label {
+    grid-area: nl;
+    justify-self: end;
+    margin-right: 20px;  
+}
+
+#add-journey-form #optional-no {
+    grid-area: on;
+}
+
+#add-journey-form #save-btn {
+    grid-area: sb;
+    font-size: 25px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+}
+#add-journey-form #save-btn:hover {
+    background-color: rgb(56, 56, 56);
+    color: white;
+}
+
+select {
+    font-size: 20px;    
+}
+
+input[type='radio']{
+    width: 25px;
+    height: 25px;
+}
+
+#render_summary_container {
+    width: 100%;
+    font-size: 25px;
+    line-height: 1.6em;
+    padding-left:70px;
+    padding-top: 20px;
+ 
+}
+
+#render_summary_container li{
+    list-style: none;
+}
+
+/* #fa-times-circle {
+} */
+
+#journeys-all-view button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-bottom: 10px;
+    color: red;
+}
